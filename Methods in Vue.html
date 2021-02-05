@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div  id="app">
+        <button @click="puxaMusica">eh isos </button>
+        <div>{{showSong}}</div>
+    </div>
+
+    <script>
+        loadSong = new Vue({
+            el: '#app',
+            data: {
+                showSong: {}
+            },
+            methods: {
+                puxaMusica(){
+                   fetch("https://api.lyrics.ovh/v1/xuxa/lua-de-cristal")
+                    .then((e) => e.json())
+                    .then(a => this.showSong = a)
+                    
+                }
+            },
+        })
+
+   
+    </script>
+</body>
+</html>
