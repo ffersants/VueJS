@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <a v-bind:href="vBindLink">HREF com v-bind</a>
+        <img width="120em" :src="hasBonus ? 'https://uxwing.com/wp-content/themes/uxwing/download/20-food-and-drinks/coffee-bean.png' : ''" alt="">
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                vBindLink: "https://blog.tiagomatos.com/vuejs-diretiva-v-bind/",
+                hasBonus: true
+            }
+        })
+    </script>
+</body>
+</html>
