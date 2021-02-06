@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <form action=""></form>
+        <input placeholder="Insert your name" @keyup="updateName" @keypress.enter="sayHi">
+        <!-- using the modifier to call preventDefault() -->
+        <button type="submit" @click.prevent="sayHi">Done</button>
+    </form>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: ""
+            },
+            methods: {
+                updateName(e){
+                    if(e.key == "Enter") this.sayHi();
+                    this.name = e.target.value;
+                },
+                sayHi(){
+                    alert("Hello " + this.name)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

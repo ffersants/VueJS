@@ -11,6 +11,7 @@
     <div id="app">
         <a v-bind:href="vBindLink">HREF com v-bind</a>
         <img width="120em" :src="hasBonus ? 'https://uxwing.com/wp-content/themes/uxwing/download/20-food-and-drinks/coffee-bean.png' : ''" alt="">
+        <img v-if="hasBonus" width="120em" src="https://uxwing.com/wp-content/themes/uxwing/download/20-food-and-drinks/coffee-bean.png" alt="">
     </div>
     <script>
         new Vue({

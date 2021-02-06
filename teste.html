@@ -7,14 +7,15 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 </head>
 <body>      
-    <div id="main">
+    <div id="main" v-bind:title="nomeCompleto">
         <h1>{{titulo}}</h1>
     </div>
     <script>
         new Vue({
             el: '#main',
             data: {
-                titulo: 'Hello world'
+                titulo: 'Hello world',
+                nomeCompleto: 'Eh isso aí'
             }
         })
     </script>
