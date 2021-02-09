@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        form{
+            margin: 5em;
+        }
+        .true{
+    
+            border: 4px solid red!important;
+        }
+
+        .false{
+           
+            border: 4px solid rgb(21, 255, 21)!important;
+        }
+
+        .btnCorrectActive{
+            background-color: rgb(21, 255, 21)!important;;
+        }
+
+        .btnIncorrectActive{
+            background-color: red!important;;
+        }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <form id="myForm">
+        <div class="form-group">
+            <label for="usuario">Usuário</label>
+            <input :class="incorrect" type="text" class="form-control" placeholder="Digite seu usuário" id="usuario">
+        </div>
+
+        <div class="form-group">
+            <label for="senha_input">Senha</label>
+            <input :class="incorrect" type="password" class="form-control" placeholder="Digite sua senha" id="senha_input">
+            <small>
+                <a href="">Esqueci minha senha</a>
+            </small>
+            <br>
+            <button @click.prevent="correct" :class="activeCorrect" class="mt-2 btn btn-dark">It's correct</button>
+            <button @click.prevent="incorrectMethod" :class="activeIncorrect"  class="mt-2 btn btn-dark">It's incorrect</button>
+
+        </div>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <script>
+        new Vue({
+            el: "#myForm", 
+            data: {
+                incorrect: "false",
+                activeIncorrect: "none",
+                activeCorrect: "none"
+            },
+            methods: {
+                correct(){
+                    this.incorrect = "false";
+                    this.activeCorrect = "btnCorrectActive";
+                    this.activeIncorrect = "none"
+                },
+                incorrectMethod(){
+                    this.incorrect = "true";
+                    this.activeCorrect = "none";
+                    this.activeIncorrect = "btnIncorrectActive"
+                }
+            }
+        })
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

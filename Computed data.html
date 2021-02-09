@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="example">
+        <p>Mensagem original: "{{ message }}"</p>
+        <p>Mensagem ao contrário: "{{ reversedMessage }}"</p>
+      </div>
+    <script>
+        var vm = new Vue({
+  el: '#example',
+  data: {
+    message: 'Olá Vue'
+  },
+  computed: {
+    // uma função "getter" computada (computed getter)
+    reversedMessage: function () {
+      // `this` aponta para a instância Vue da variável `vm`
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
+    </script>
+</body>
+</html>
