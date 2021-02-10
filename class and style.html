@@ -27,6 +27,9 @@
         .btnIncorrectActive{
             background-color: red!important;;
         }
+        .doShow{
+	        color: red;
+        }
     </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -47,12 +50,26 @@
             <br>
             <button @click.prevent="correct" :class="activeCorrect" class="mt-2 btn btn-dark">It's correct</button>
             <button @click.prevent="incorrectMethod" :class="activeIncorrect"  class="mt-2 btn btn-dark">It's incorrect</button>
-
         </div>
     </form>
 
+    <div id="app">
+        <p :style="{background: meuBg, color: temQserDark, fontSize: tamanho + 'px'}"> This is some text </p>
+    </div>
+
     <!-- Optional JavaScript -->
     <script>
+
+new Vue({
+	el: "#app",
+	data: {
+        dontShow: true, 
+        meuBg: "yellow",
+        temQserDark: "black",
+        tamanho: 30
+	}
+})
+
         new Vue({
             el: "#myForm", 
             data: {
