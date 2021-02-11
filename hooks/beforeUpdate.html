@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>Total: {{total}}</p>
+        <button @click="total++">Adicionar</button>
+    </div>
+    
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                showFetchResponse: "AA",
+                total: 0
+            },
+            beforeMount(){
+                console.log("Vai dar o valor da propriedade-> " + this.showFetchResponse)
+                console.log("Esse é o DOM ", this.$el)
+
+                fetch("https://api.github.com/users/ffersants")
+                    .then(r => r.json())
+                    .then(r => this.showFetchResponse = r.login)
+            }
+        })
+    </script>
+</body>
+</html>
