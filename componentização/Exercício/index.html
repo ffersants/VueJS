@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <mostra-clima></mostra-clima>
+        <mostra-dolar-e-real></mostra-dolar-e-real>
+    </div>
+    <script type="module">
+        import MostraClima from "./components/MostraClima.js";
+        import MostraDolarEReal from "./components/MostraDolarEReal.js";
+
+        Vue.component("mostra-clima", MostraClima)
+
+        new Vue({
+            el: "#app",
+            components: {
+                MostraDolarEReal
+            }
+        })
+    </script>
+</body>
+</html>
