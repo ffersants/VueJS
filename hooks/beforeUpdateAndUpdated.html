@@ -20,13 +20,11 @@
                 showFetchResponse: "AA",
                 total: 0
             },
-            beforeMount(){
-                console.log("Vai dar o valor da propriedade-> " + this.showFetchResponse)
-                console.log("Esse é o DOM ", this.$el)
-
-                fetch("https://api.github.com/users/ffersants")
-                    .then(r => r.json())
-                    .then(r => this.showFetchResponse = r.login)
+            beforeUpdate(){
+                console.log("Antes de atualizar...")
+            },
+            updated(){
+                console.log("Atualizado!")
             }
         })
     </script>
