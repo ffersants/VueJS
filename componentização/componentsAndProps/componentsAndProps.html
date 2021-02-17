@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <lista-produtos :frutas="listaDeFrutas" :titulo="2"></lista-produtos>
+    </div>
+
+    <script type="module">
+
+        const ListaProdutos = {
+            name: "ListaProdutos",
+            props: {
+                //especificando os props esperados
+                frutas: {
+                    type: Array,
+                    required: true
+                },
+                titulo: {
+                    type: [Array, String],
+                    default: "Isso é um título"
+                }
+            },
+            template: 
+            `
+                <ul>
+                    <li>{{frutas}}</li>
+                    <li>{{titulo}}</li>
+                </ul>
+            `
+        }
+
+
+        new Vue({
+            el: "#app",
+            data: {
+                listaDeFrutas: ['Banana', 'Morango', 'Uva'],
+                tituloDaProp: ['Isso', 'eh', 'um', 'array']
+            },
+            components: {
+                ListaProdutos
+            }
+        })
+    </script>
+</body>
+</html>

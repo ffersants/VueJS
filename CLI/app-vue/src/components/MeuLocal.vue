@@ -1,5 +1,5 @@
 <template>
-    <h1 class="local">{{message}}</h1>
+    <h1>{{message}}</h1>
 </template>
 
 <script>
@@ -14,8 +14,8 @@ export default {
 }
 </script>
 
-<style>
-    .local{
+<style scoped>
+    h1{
         color: blue;
     }
 </style>
