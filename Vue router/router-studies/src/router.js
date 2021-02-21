@@ -8,6 +8,7 @@ import Notifications from './views/Notifications.vue'
 
 export default new Router({
     mode: "history",
+    base: "perfil",
     routes:[
         { 
             path: '/',
