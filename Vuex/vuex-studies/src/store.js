@@ -8,9 +8,15 @@ export default new Vuex.Store({
         netoNome: 'Fernando'
     },
     mutations: {
-        alteraNetoNome(state, nome){
+        ALTERA_NETO_NOME(state, nome){
             console.log(arguments)
             state.netoNome = nome;
+        }
+    },
+    actions: {
+        alteraNetoNome(context, payload){
+            if(payload === "") return;
+            context.commit("ALTERA_NETO_NOME", payload)
         }
     }
 })
